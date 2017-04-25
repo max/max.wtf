@@ -6,10 +6,10 @@
   "author": "Max Schoening <max@max.wtf>",
   "license": "MIT",
   "scripts": {
-    "dev": "next",
     "build": "next build",
-    "start": "next start -p $PORT",
-    "postinstall": "npm run build"
+    "dev": "next",
+    "postinstall": "npm run build",
+    "start": "next start -p $PORT"
   },
   "dependencies": {
     "next": "2.0.0",
