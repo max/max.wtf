@@ -7,7 +7,7 @@ const isLast = (index, items) => ( index + 1 === items.length );
 export default () => (
   <div className="wrapper center pv4">
     <Head>
-      <title>max.wtf – Max Schoening</title>
+      <title>max.wtf – Hello</title>
       <meta charset="utf-8" />
       <meta name="description" content="Max Schoening is a Sr. Product Design Director at GitHub working on planet scale computing for mere mortals." />
       <meta name="viewport" content="width=device-width" />
