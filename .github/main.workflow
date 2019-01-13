@@ -28,6 +28,6 @@ action "export" {
 
 action "publish" {
   needs = "export"
-  uses = "docker://git"
+  uses = "docker://alpine/git"
   runs = "git subtree push --prefix dist origin gh-pages"
 }
