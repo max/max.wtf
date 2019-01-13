@@ -26,8 +26,8 @@ action "export" {
   args = "run export -- -o /github/workspace/dist"
 }
 
-action "list" {
+action "publish" {
   needs = "export"
-  uses = "docker://alpine"
-  runs = "ls /github/workspace/dist"
+  uses = "docker://git"
+  runs = "git subtree push --prefix dist origin gh-pages"
 }
