@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "next": "8.0.1",
-    "react": "16.8.2",
+    "react": "16.8.3",
     "react-dom": "16.8.2"
   },
   "devDependencies": {
