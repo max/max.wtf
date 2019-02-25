@@ -1,17 +1,13 @@
-FROM node:10.15-alpine as base
+FROM node:10.15-alpine as build
 
-RUN apk update && apk upgrade && \
-    apk add --no-cache git
-
-RUN mkdir /app
-WORKDIR /app
+RUN mkdir /usr/src
+WORKDIR /usr/src
 
 COPY package*.json ./
 RUN npm install
 COPY . .
 
-FROM base as test
 RUN npm test
-
-FROM base as build
 RUN npm run build && npm run export -- -o /public
+
+CMD ["npm", "start"]
