@@ -9,9 +9,9 @@ action "build" {
   secrets = ["GCP_PROJECT"]
 }
 
-action "auth gcr" {
+action "auth gcloud" {
   uses = "actions/gcloud/auth@master"
-  secrets = ["GCR_AUTH"]
+  secrets = ["GCLOUD_AUTH"]
 }
 
 action "publish" {
