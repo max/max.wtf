@@ -1,35 +1,22 @@
-workflow "check" {
+workflow "build & test" {
   on = "push"
-  resolves = ["test"]
-}
-
-action "test" {
-  uses = "docker://docker"
-  args = ["build", "-t", "max/max.wtf", "."]
-}
-
-workflow "publish" {
-  on = "push"
-  resolves = ["deploy"]
-}
-
-action "filter" {
-  uses = "actions/bin/filter@master"
-  args = "branch master"
+  resolves = ["publish"]
 }
 
 action "build" {
-  needs = ["filter"]
   uses = "docker://docker"
-  args = ["build", "-t", "max/max.wtf", "."]
+  runs = ["sh", "-c", "docker build -t gcr.io/$GCP_PROJECT/$GITHUB_REPOSITORY:$GITHUB_SHA ."]
+  secrets = ["GCP_PROJECT"]
 }
 
-action "extract" {
-  needs = ["build"]
-  uses = "./.github/extract"
+action "auth gcloud" {
+  uses = "actions/gcloud/auth@master"
+  secrets = ["GCLOUD_AUTH"]
 }
 
-action "deploy" {
-  needs = ["extract"]
-  uses = "./.github/deploy"
+action "publish" {
+  needs = ["auth gcloud", "build"]
+  uses = "actions/gcloud/cli@master"
+  runs = ["sh", "-c", "gcloud docker -- push gcr.io/$GCP_PROJECT/$GITHUB_REPOSITORY:$GITHUB_SHA"]
+  secrets = ["GCP_PROJECT"]
 }

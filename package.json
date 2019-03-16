@@ -10,7 +10,7 @@
     "build": "next build",
     "dev": "next",
     "export": "next export",
-    "start": "next start",
+    "start": "echo $PORT && next start --hostname 0.0.0.0 --port $PORT",
     "test": "NODE_ENV=test jest"
   },
   "dependencies": {
