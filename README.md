@@ -1,10 +1,5 @@
-# max.wtf
+# max/max.wtf
 
-This is my personal internet website hosted on GitHub Pages.
+![badge](https://action-badges.now.sh/max/max.wtf)
 
-## Local setup
-
-```
-npm i
-npm run dev
-```
+This is my personal internet website.
