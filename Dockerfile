@@ -10,4 +10,4 @@ COPY . .
 RUN npm test
 RUN npm run build && npm run export -- -o /public
 
-CMD ["npm", "start"]
+ENTRYPOINT ["npm", "start"]
