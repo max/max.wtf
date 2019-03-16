@@ -7,3 +7,8 @@ action "build" {
   uses = "docker://docker"
   runs = ["sh", "-c", "docker build -t $GITHUB_REPOSITORY:$GITHUB_SHA ."]
 }
+
+action "auth google cloud" {
+  uses = "actions/gcloud/auth@master"
+  secrets = ["GCLOUD_AUTH"]
+}
