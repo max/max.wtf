@@ -8,6 +8,6 @@ RUN npm install
 COPY . .
 
 RUN npm test
-RUN npm run build && npm run export -- -o /public
+RUN npm run build
 
 ENTRYPOINT ["npm", "start"]
