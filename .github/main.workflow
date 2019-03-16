@@ -15,7 +15,7 @@ action "auth gcr" {
 }
 
 action "publish" {
-  needs = ["auth google cloud", "build"]
+  needs = ["auth gcr", "build"]
   uses = "actions/gcloud/cli@master"
   runs = ["sh", "-c", "gcloud docker -- push gcr.io/$GCP_PROJECT/$GITHUB_REPOSITORY:$GITHUB_SHA"]
   secrets = ["GCP_PROJECT"]
