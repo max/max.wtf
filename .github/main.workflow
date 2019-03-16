@@ -1,6 +1,6 @@
 workflow "build & test" {
   on = "push"
-  resolves = ["publish"]
+  resolves = ["auth gcr"]
 }
 
 action "build" {
