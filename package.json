@@ -19,7 +19,7 @@
     "react-dom": "16.8.6"
   },
   "devDependencies": {
-    "enzyme": "3.9.0",
+    "enzyme": "3.10.0",
     "enzyme-adapter-react-16": "1.13.2",
     "jest": "24.8.0",
     "react-addons-test-utils": "15.6.2",
