@@ -14,7 +14,7 @@
     "test": "NODE_ENV=test jest"
   },
   "dependencies": {
-    "next": "9.0.1",
+    "next": "9.0.2",
     "react": "16.8.6",
     "react-dom": "16.8.6"
   },
