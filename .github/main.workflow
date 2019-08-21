@@ -1,6 +1,6 @@
 workflow "build & test" {
-  on = "push"
   resolves = ["publish"]
+  on = "check_suite"
 }
 
 action "build" {
