@@ -1,10 +1,10 @@
 {
-  "name": "max.wtf",
+  "name": "max.dev",
   "version": "0.1.0",
   "description": "My personal internet website",
   "private": true,
   "main": "pages/index.js",
-  "author": "Max Schoening <max@max.wtf>",
+  "author": "Max Schoening <max@max.dev>",
   "license": "MIT",
   "scripts": {
     "build": "next build",
